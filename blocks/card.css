@@ -6,6 +6,7 @@
   height: 413px;
   width: 413px;
   object-fit: cover;
+  display: block;
 }
 
 .card__content {
