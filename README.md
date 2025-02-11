@@ -1,21 +1,21 @@
-# Project 3: Spots
+# Spots
 
-### Overview  
+An image sharing site that adjust to different applications from the web to phones.
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+## Description
+
+This website is an image sharing site that allows people on all different platforms to use it and upload their photos for others to see.
+
+## Tech Stack
+
+- HTML
+- CSS
+- Responsive Designs for multiple applications
+
+## Deployment
+
+This webpage is deployed to Github Pages.
+
+- Deployment link
+
+https://github.com/jayala24/se_project_spots/commit/92a475ed7763fceee7b4a7f66fb7dbc0d7c4c8c4
