@@ -37,7 +37,7 @@
   margin: 0;
   font-size: 16px;
   font-family: "Poppins", Arial, sans-serif;
-  color: #212121;
+  color: #212121b2;
   font-weight: 500;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -58,16 +58,20 @@
   cursor: pointer;
   color: #212121;
   font-weight: 500;
+  gap: 8px;
+  opacity: 0.7;
+  font-size: 16px;
+  line-height: 16px;
 }
 
 .profile__edit-btn:hover {
-  opacity: 70%;
+  opacity: 1;
 }
 
 .profile__add-btn {
   margin-left: auto;
   background-color: #212121;
-  color: white;
+  color: #fcf5e5;
   border-radius: 8px;
   width: 149px;
   height: 52px;
@@ -75,10 +79,11 @@
   font-family: "Poppins", Arial, sans-serif;
   font-size: 16px;
   cursor: pointer;
+  border: none;
 }
 
 .profile__add-btn:hover {
-  opacity: 70%;
+  opacity: 0.8;
 }
 
 .profile__add-btn-icon {
