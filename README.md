@@ -18,4 +18,4 @@ This webpage is deployed to Github Pages.
 
 - Deployment link
 
-https://github.com/jayala24/se_project_spots/commit/92a475ed7763fceee7b4a7f66fb7dbc0d7c4c8c4
+https://jayala24.github.io/se_project_spots/
