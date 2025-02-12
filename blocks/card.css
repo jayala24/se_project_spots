@@ -16,17 +16,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: 1280px;
 }
 
 .card__title {
   font-size: 20px;
+  max-width: 350px;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 500;
   line-height: 24px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .card__like-button {
@@ -40,7 +40,7 @@
 }
 
 .card__like-button:hover {
-  opacity: 70%;
+  opacity: 1;
 }
 
 @media screen and (max-width: 627px) {
@@ -50,5 +50,10 @@
 
   .card__title {
     max-width: 250px;
+  }
+
+  .card__like-button {
+    width: 20px;
+    height: 18px;
   }
 }
