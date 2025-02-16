@@ -122,11 +122,16 @@
   .profile__column {
     text-align: center;
     margin-right: 0;
+    margin-bottom: 20px;
   }
 
   .profile__add-btn {
     margin-left: 0;
     max-width: 288px;
     width: 100%;
+  }
+
+  .profile__edit-btn {
+    align-self: center;
   }
 }
