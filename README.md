@@ -19,3 +19,7 @@ This webpage is deployed to Github Pages.
 - Deployment link
 
 https://jayala24.github.io/se_project_spots/
+
+## Video Description
+
+https://drive.google.com/file/d/1pEgev7hRwEYRZZVxQKec0WSf8SR6_-nk/view?usp=sharing
