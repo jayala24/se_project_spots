@@ -1,7 +1,7 @@
 const initialCards = [
   {
     name: "Val Thorens",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jp",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
   },
   {
     name: "Restaurant terrace",
@@ -26,18 +26,34 @@ const initialCards = [
 ];
 
 const profileEditButton = document.querySelector(".profile__edit-btn");
+const profileName = document.querySelector(".profile__name");
+const profileDescription = document.querySelector(".profile__description");
 
-const editProfileModal = document.querySelector("#edit-modal");
+const editModal = document.querySelector("#edit-modal");
 const editModalCloseBtn = editModal.querySelector(".modal__close-btn");
+const editModalNameInput = editModal.querySelector("#profile-name-input");
+const editProfileForm = document.querySelector("#edit-profile-form");
+const editModalDescriptionInput = editModal.querySelector(
+  "#profile-description-input"
+);
 
 function openModal() {
-  editProfileModal.classList.add("modal_opened");
+  editModalNameInput.value = profileName.textContent;
+  editModalDescriptionInput.value = profileDescription.textContent;
+  editModal.classList.add("modal__opened");
 }
 
 function closeModal() {
-  editModal.classList.remove("modal_opened");
+  editModal.classList.remove("modal__opened");
+  profileName.textContent = editModalNameInput.value;
+  profileDescription.textContent = editModalDescriptionInput.value;
 }
 
 profileEditButton.addEventListener("click", openModal);
 
 editModalCloseBtn.addEventListener("click", closeModal);
+
+editProfileForm.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+  closeModal();
+});
