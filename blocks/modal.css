@@ -13,7 +13,7 @@
   visibility: hidden;
 }
 
-.modal__opened {
+.modal_opened {
   visibility: visible;
 }
 
@@ -41,8 +41,7 @@
 
 .modal__close-btn:hover {
   cursor: pointer;
-  color: #212121;
-  opacity: 40%;
+  opacity: 100%;
 }
 
 .modal__title {
@@ -62,7 +61,7 @@
   font-family: "Poppins", Arial, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0);
+  color: rgba(33, 33, 33, 0.7);
 }
 
 .modal__input {
@@ -95,7 +94,7 @@
 
 .modal__submit-btn:hover {
   cursor: pointer;
-  background-color: rgba(33, 33, 33, 0.4);
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 627px) {
