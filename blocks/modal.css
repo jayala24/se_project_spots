@@ -124,3 +124,52 @@
     width: 100%;
   }
 }
+
+#image-modal .modal__container {
+  background: transparent;
+  padding: 0;
+  max-width: 75vw;
+  max-height: 75vh;
+  margin: auto;
+}
+
+#image-modal .modal__image {
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+#image-modal .modal__caption {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  color: #fff;
+  text-align: center;
+  margin: 10px 0 0;
+}
+
+#image-modal .modal__close-btn {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+@media screen and (max-width: 580px) {
+  #image-modal .modal__container {
+    max-width: 90vw;
+  }
+
+  #image-modal .modal__image {
+    max-width: 90vw;
+    max-height: 90vh;
+  }
+
+  #image-modal .modal__close-btn {
+    right: 0;
+    top: -45px;
+  }
+}

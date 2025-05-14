@@ -41,6 +41,11 @@
             <template id="card-template">
               <li class="card">
                 <img src="" alt="" class="card__image" />
+                <button
+                  class="card__delete-button"
+                  type="button"
+                  aria-label="Delete card"
+                ></button>
                 <div class="card__content">
                   <h2 class="card__title"></h2>
                   <button type="button" class="card__like-button"></button>
@@ -80,6 +85,42 @@
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
+        </div>
+      </div>
+      <div class="modal" id="add-modal">
+        <div class="modal__container">
+          <button class="modal__close-btn" type="button">
+            <img src="./images/close-btn.svg" alt="close button" />
+          </button>
+          <h2 class="modal__title">New Place</h2>
+          <form class="modal__form" name="add-card">
+            <input
+              type="text"
+              name="title"
+              id="card-title-input"
+              class="modal__input"
+              placeholder="Title"
+              required
+            />
+            <input
+              type="url"
+              name="url"
+              id="card-url-input"
+              class="modal__input"
+              placeholder="Image URL"
+              required
+            />
+            <button class="modal__submit-btn" type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal" id="image-modal">
+        <div class="modal__container">
+          <button class="modal__close-btn" type="button">
+            <img src="./images/close-btn.svg" alt="close button" />
+          </button>
+          <img class="modal__image" src="" alt="" />
+          <p class="modal__caption"></p>
         </div>
       </div>
     </div>
