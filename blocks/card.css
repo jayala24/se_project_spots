@@ -33,12 +33,12 @@
 }
 
 .card__like-button {
-  background-image: url(../images/Like.svg);
+  background-image: url(../images/heart.svg);
   height: 20px;
   width: 23px;
   border: none;
-  background-color: #fcf5e5;
-  opacity: 40%;
+  background-color: transparent;
+  opacity: 0.5;
   cursor: pointer;
   background-size: contain;
   background-position: center;
@@ -46,20 +46,17 @@
 }
 
 .card__like-button_active {
-  background-image: url(../images/like+hover.svg);
+  background-image: url(../images/Like.svg);
   opacity: 1;
 }
 
 .card__like-button:hover {
-  opacity: 1;
-}
-
-.card__like-button_active {
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
 .card__delete-button {
   background: transparent url(../images/Trash.svg) center no-repeat;
+  background-color: transparent;
   width: 18px;
   height: 19px;
   border: none;
