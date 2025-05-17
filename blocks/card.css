@@ -55,7 +55,7 @@
 }
 
 .card__delete-button {
-  background: transparent url(../images/Trash.svg) center no-repeat;
+  background: url(../images/hoverTrash.svg) center no-repeat;
   background-color: transparent;
   width: 18px;
   height: 19px;
