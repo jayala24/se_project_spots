@@ -34,7 +34,13 @@ const imageModalImage = imageModal.querySelector(".modal__image");
 const imageModalCaption = imageModal.querySelector(".modal__caption");
 const imageModalCloseBtn = imageModal.querySelector(".modal__close-btn");
 
-imageModalCloseBtn.addEventListener("click", () => closeModal(imageModal));
+imageModalCloseBtn.addEventListener("click", () => {
+  imageModalCloseBtn.classList.add("animate-circle");
+  setTimeout(() => {
+    closeModal(imageModal);
+    imageModalCloseBtn.classList.remove("animate-circle");
+  }, 300);
+});
 
 imageModal.addEventListener("mousedown", (evt) => {
   if (evt.target === imageModal) {
@@ -97,11 +103,23 @@ function getCardElement(data) {
     cardElement.remove();
   });
 
-  cardImageEl.addEventListener("click", () => {
+  cardImageEl.addEventListener("click", (evt) => {
+    const circle = document.createElement("div");
+    circle.classList.add("click-circle");
+
+    circle.style.left = `${evt.clientX}px`;
+    circle.style.top = `${evt.clientY}px`;
+
+    document.body.appendChild(circle);
+
     imageModalImage.src = data.link;
     imageModalImage.alt = data.name;
     imageModalCaption.textContent = data.name;
     openModal(imageModal);
+
+    setTimeout(() => {
+      circle.remove();
+    }, 300);
   });
 
   return cardElement;
@@ -110,6 +128,7 @@ function getCardElement(data) {
 function openModal(modal) {
   modal.classList.add("modal_opened");
 }
+
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
