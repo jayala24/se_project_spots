@@ -29,17 +29,26 @@ const initialCards = [
   },
 ];
 
+function createCircleAnimation(evt) {
+  const circle = document.createElement("div");
+  circle.classList.add("click-circle");
+  circle.style.left = `${evt.clientX}px`;
+  circle.style.top = `${evt.clientY}px`;
+  document.body.appendChild(circle);
+
+  setTimeout(() => {
+    circle.remove();
+  }, 300);
+}
+
 const imageModal = document.querySelector("#image-modal");
 const imageModalImage = imageModal.querySelector(".modal__image");
 const imageModalCaption = imageModal.querySelector(".modal__caption");
 const imageModalCloseBtn = imageModal.querySelector(".modal__close-btn");
 
-imageModalCloseBtn.addEventListener("click", () => {
-  imageModalCloseBtn.classList.add("animate-circle");
-  setTimeout(() => {
-    closeModal(imageModal);
-    imageModalCloseBtn.classList.remove("animate-circle");
-  }, 300);
+imageModalCloseBtn.addEventListener("click", (evt) => {
+  createCircleAnimation(evt);
+  closeModal(imageModal);
 });
 
 imageModal.addEventListener("mousedown", (evt) => {
@@ -95,10 +104,10 @@ function getCardElement(data) {
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
 
-  likeButton.addEventListener("click", () => {
+  likeButton.addEventListener("click", (evt) => {
+    createCircleAnimation(evt);
     likeButton.classList.toggle("card__like-button_active");
   });
-
   deleteButton.addEventListener("click", () => {
     cardElement.remove();
   });
@@ -142,13 +151,17 @@ function handleEditFormSubmit(evt) {
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 
-profileEditButton.addEventListener("click", () => {
+profileEditButton.addEventListener("click", (evt) => {
+  createCircleAnimation(evt);
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
   openModal(editModal);
 });
 
-editModalCloseBtn.addEventListener("click", () => closeModal(editModal));
+editModalCloseBtn.addEventListener("click", (evt) => {
+  createCircleAnimation(evt);
+  closeModal(editModal);
+});
 
 editModal.addEventListener("mousedown", (evt) => {
   if (evt.target === editModal) {
@@ -156,11 +169,17 @@ editModal.addEventListener("mousedown", (evt) => {
   }
 });
 
-addCardButton.addEventListener("click", () => openModal(addCardModal));
+addCardButton.addEventListener("click", (evt) => {
+  createCircleAnimation(evt);
+  openModal(addCardModal);
+});
 addCardForm.addEventListener("submit", handleAddCardFormSubmit);
 
 const addModalCloseBtn = addCardModal.querySelector(".modal__close-btn");
-addModalCloseBtn.addEventListener("click", () => closeModal(addCardModal));
+addModalCloseBtn.addEventListener("click", (evt) => {
+  createCircleAnimation(evt);
+  closeModal(addCardModal);
+});
 
 addCardModal.addEventListener("mousedown", (evt) => {
   if (evt.target === addCardModal) {
