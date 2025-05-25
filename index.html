@@ -94,24 +94,28 @@
           </button>
           <h2 class="modal__title">New Post</h2>
           <form class="modal__form" name="add-card">
-            Image Link
-            <input
-              type="url"
-              name="url"
-              id="card-url-input"
-              class="modal__input"
-              placeholder="Image URL"
-              required
-            />
-            Caption
-            <input
-              type="text"
-              name="title"
-              id="card-title-input"
-              class="modal__input"
-              placeholder="Title"
-              required
-            />
+            <label for="card-url-input" class="modal__label">
+              Image Link
+              <input
+                type="url"
+                name="url"
+                id="card-url-input"
+                class="modal__input"
+                placeholder="Image URL"
+                required
+              />
+            </label>
+            <label for="card-title-input" class="modal__label">
+              Caption
+              <input
+                type="text"
+                name="title"
+                id="card-title-input"
+                class="modal__input"
+                placeholder="Title"
+                required
+              />
+            </label>
             <button class="modal__submit-btn" type="submit">Save</button>
           </form>
         </div>
