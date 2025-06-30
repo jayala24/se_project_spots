@@ -38,14 +38,11 @@ const toggleButtonState = (inputList, buttonElement) => {
     disableButton(buttonElement);
   } else {
     buttonElement.disabled = false;
-    // remove disabled class
   }
 };
 
 const disableButton = (buttonElement) => {
   buttonElement.disabled = true;
-  // Add modifier to turn button grey
-  // Change CSS
 };
 
 const resetValidation = (formEl, inputList) => {
