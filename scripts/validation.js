@@ -29,7 +29,7 @@ const checkInputValidity = (formEl, inputEl) => {
 
 const hasInvalidInput = (inputList) => {
   inputList.some((input) => {
-    return !input.validty.valid;
+    return !input.validity.valid;
   });
 };
 
@@ -46,7 +46,7 @@ const disableButton = (buttonElement) => {
 };
 
 const resetValidation = (formEl, inputList) => {
-  inputList.foreach((input) => {
+  inputList.forEach((input) => {
     hideInputError(formEl, input);
   });
 };
@@ -68,7 +68,7 @@ const setEventListeners = (formEl, config) => {
 const enableValidation = (config) => {
   const formList = document.querySelectorAll(config.formSelector);
   formList.forEach((formEl) => {
-    setEventListeners(formEl);
+    setEventListeners(formEl, config);
   });
 };
 
