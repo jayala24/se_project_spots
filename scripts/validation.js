@@ -28,7 +28,7 @@ const checkInputValidity = (formEl, inputEl) => {
 };
 
 const hasInvalidInput = (inputList) => {
-  inputList.some((input) => {
+  return inputList.some((input) => {
     return !input.validity.valid;
   });
 };
