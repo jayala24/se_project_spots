@@ -11,10 +11,13 @@
   justify-content: center;
   padding: 0 16px;
   visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s ease-in;
 }
 
 .modal_opened {
   visibility: visible;
+  opacity: 1;
 }
 
 .modal__container {
@@ -153,7 +156,7 @@
   cursor: pointer;
   line-height: 100%;
   font-weight: 500;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .modal__form:has(input[name="url"]:valid:not(:placeholder-shown)):has(
