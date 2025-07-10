@@ -45,7 +45,7 @@
   z-index: 2;
 }
 
-.modal__button_disabled {
+.modal__button_disabled:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
