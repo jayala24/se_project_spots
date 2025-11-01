@@ -1,11 +1,14 @@
 class Api {
-  constructor({ baseUrl, headers }) {
+  constructor({ baseUrl, headers, name, about }) {
     this._baseUrl = baseUrl;
     this._headers = headers;
+    this._name = name;
+    this._about = about;
   }
 
   getAppInfo() {
     return Promise.all([this.getInitialCards()]);
+    return Promise.all([this.getUserInfo()]);
   }
 
   getInitialCards() {
@@ -19,7 +22,21 @@ class Api {
     });
   }
 
-  // other methods for working with the API
+  editUserInfo({ name, about }) {
+    return fetch(`${this._baseUrl}/users/me`, {
+      method: "PATCH",
+      headers: this._headers,
+      body: JSON.stringify({
+        name,
+        about,
+      }),
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(`Error: ${res.status}`);
+    });
+  }
 }
 
 export default Api;
