@@ -190,11 +190,13 @@ function handleEditFormSubmit(evt) {
       name: editModalNameInput.value,
       about: editModalDescriptionInput.value,
     })
-    .then((data) => {})
+    .then((data) => {
+      // Use dataargument instead of the input value
+      profileName.textContent = editModalNameInput.value;
+      profileDescription.textContent = editModalDescriptionInput.value;
+      closeModal(editModal);
+    })
     .catch(console.error);
-  profileName.textContent = editModalNameInput.value;
-  profileDescription.textContent = editModalDescriptionInput.value;
-  closeModal(editModal);
 }
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);

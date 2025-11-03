@@ -7,6 +7,7 @@ class Api {
   }
 
   getAppInfo() {
+    // TODO call getUserInfo in this array
     return Promise.all([this.getInitialCards()]);
     return Promise.all([this.getUserInfo()]);
   }

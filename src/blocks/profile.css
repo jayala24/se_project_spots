@@ -12,6 +12,10 @@
   border-radius: 8px;
 }
 
+.profile__avatar-btn::after {
+  content: "Edit Avatar";
+}
+
 .profile__column {
   display: flex;
   flex-direction: column;
