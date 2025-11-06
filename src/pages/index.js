@@ -9,37 +9,6 @@ import {
 
 import Api from "../utils/Api.js";
 
-// const initialCards = [
-//   {
-//     name: "Golden Gate Bridge",
-//     link: " https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
-//   },
-//   {
-//     name: "Val Thorens",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
-//   },
-//   {
-//     name: "Restaurant terrace",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
-//   },
-//   {
-//     name: "An outdoor cafe",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
-//   },
-//   {
-//     name: "A very long bridge, over the forest and through the trees",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
-//   },
-//   {
-//     name: "Tunnel with morning light",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
-//   },
-//   {
-//     name: "Mountain house",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
-//   },
-// ];
-
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
@@ -87,6 +56,7 @@ imageModal.addEventListener("mousedown", (evt) => {
 });
 
 const profileEditButton = document.querySelector(".profile__edit-btn");
+const avatarModalBtn = document.querySelector(".profile__avatar-btn");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 
@@ -98,6 +68,12 @@ const editModalNameInput = editModal.querySelector("#profile-name-input");
 const editModalDescriptionInput = editModal.querySelector(
   "#profile-description-input"
 );
+
+const avatarModal = document.querySelector("#avatar-modal");
+const avatarFormElement = avatarModal.querySelector(".modal__form");
+const avatarSubmitButton = avatarModal.querySelector(".modal__submit-btn");
+const avatarModalCloseBtn = avatarModal.querySelector(".modal__close-btn");
+const avatarModalNameInput = avatarModal.querySelector("#profile-avatar-input");
 
 const addCardButton = document.querySelector(".profile__add-btn");
 const addCardModal = document.querySelector("#add-modal");
@@ -117,6 +93,17 @@ function handleAddCardFormSubmit(evt) {
   addCardForm.reset();
   disableButton(addSubmitButton);
   closeModal(addCardModal);
+}
+
+function handleAvatarSubmit(evt) {
+  evt.preventDefault();
+  api
+    .editAvatarInfo(avatarModalNameInput.value)
+    .then((data) => {
+      console.log(data.avatar);
+      // TODO make this work properly
+    })
+    .catch(console.error);
 }
 
 const cardTemplate = document.querySelector("#card-template");
@@ -222,6 +209,11 @@ editModal.addEventListener("mousedown", (evt) => {
     closeModal(editModal);
   }
 });
+
+avatarModalBtn.addEventListener("click", () => {
+  openModal(avatarModal);
+});
+avatarFormElement.addEventListener("submit", handleAvatarSubmit);
 
 addCardButton.addEventListener("click", (evt) => {
   createCircleAnimation(evt);
