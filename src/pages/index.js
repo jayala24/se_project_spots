@@ -75,6 +75,8 @@ const avatarSubmitButton = avatarModal.querySelector(".modal__submit-btn");
 const avatarModalCloseBtn = avatarModal.querySelector(".modal__close-btn");
 const avatarModalNameInput = avatarModal.querySelector("#profile-avatar-input");
 
+const deleteModal = document.querySelector("#delete-modal");
+
 const addCardButton = document.querySelector(".profile__add-btn");
 const addCardModal = document.querySelector("#add-modal");
 const addCardForm = addCardModal.querySelector(".modal__form");
@@ -106,6 +108,10 @@ function handleAvatarSubmit(evt) {
     .catch(console.error);
 }
 
+function handleDeleteCard(evt) {
+  openModal(deleteModal);
+}
+
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
 
@@ -128,6 +134,7 @@ function getCardElement(data) {
     likeButton.classList.toggle("card__like-button_active");
   });
   deleteButton.addEventListener("click", () => {
+    handleDeleteCard();
     cardElement.remove();
   });
 
