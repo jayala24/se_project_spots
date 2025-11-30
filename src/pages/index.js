@@ -7,6 +7,8 @@ import {
   validationConfig,
 } from "../scripts/validation.js";
 
+import { setButtonText } from "../utils/helpers.js";
+
 import Api from "../utils/Api.js";
 
 const api = new Api({
@@ -139,9 +141,9 @@ function handleDeleteCard(cardElement, cardId) {
 }
 
 function handleLike(evt, id) {
-  // evt.target.classlist.toggle("card__like-button_active");
+  evt.target.classList.toggle("card__like-button_active");
   // 1. check whether card is currently liked or not
-  //   const isiked = ???;
+  //   const isLiked = ???;
   // 2. call the changeLikeStatus method, passing the appropriate arguments
   // 3. handle the response (.then and .catch)
   // 4. in the .then toggle active class
@@ -159,6 +161,8 @@ function getCardElement(data) {
   const cardImageEl = cardElement.querySelector(".card__image");
   const likeButton = cardElement.querySelector(".card__like-button");
   const deleteButton = cardElement.querySelector(".card__delete-button");
+
+  // TODO - if card is liked, set the active class on the card
 
   cardNameEl.textContent = data.name;
   cardImageEl.src = data.link;
@@ -211,6 +215,9 @@ function closeModal(modal) {
 
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
+  const submitBtn = evt.submitter;
+  submitBtn.textContent = "Saving...";
+  setButtonText(submitBtn, true, "Save", "Saving...");
   api
     .editUserInfo({
       name: editModalNameInput.value,
@@ -222,8 +229,14 @@ function handleEditFormSubmit(evt) {
       profileDescription.textContent = editModalDescriptionInput.value;
       closeModal(editModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      // call setButtonText instead
+      submitBtn.textContent = "Save";
+    });
 }
+
+// Implement - loading text for all other form submissions
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 
