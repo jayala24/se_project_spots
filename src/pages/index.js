@@ -127,9 +127,8 @@ function handleDeleteSubmit(evt) {
   api
     .deleteCard(selectedCardId)
     .then(() => {
-      // TODO
-      // remove the card from the DOM
-      //close the modal
+      selectedCard.remove();
+      closeModal(deleteModal);
     })
     .catch(console.error);
 }
@@ -239,6 +238,8 @@ function handleEditFormSubmit(evt) {
 // Implement - loading text for all other form submissions
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
+
+deleteForm.addEventListener("submit", handleDeleteSubmit);
 
 profileEditButton.addEventListener("click", (evt) => {
   createCircleAnimation(evt);
