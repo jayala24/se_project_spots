@@ -101,7 +101,6 @@ function handleAddCardFormSubmit(evt) {
   api
     .addCard(newCard)
     .then((res) => {
-      // renderCard(res, "prepend"); // optional
       const cardEl = getCardElement(res);
       cardsList.prepend(cardEl);
       addCardForm.reset();
