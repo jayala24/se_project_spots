@@ -280,9 +280,4 @@ addCardModal.addEventListener("mousedown", (evt) => {
   }
 });
 
-// for (let i = 0; i < initialCards.length; i++) {
-//   const cardElement = getCardElement(initialCards[i]);
-//   cardsList.prepend(cardElement);
-// }
-
 enableValidation(validationConfig);
