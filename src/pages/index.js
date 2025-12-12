@@ -116,7 +116,6 @@ function handleAvatarSubmit(evt) {
     .editAvatarInfo(avatarModalNameInput.value)
     .then((data) => {
       console.log(data.avatar);
-      // TODO make this work properly
     })
     .catch(console.error);
 }
@@ -222,19 +221,15 @@ function handleEditFormSubmit(evt) {
       about: editModalDescriptionInput.value,
     })
     .then((data) => {
-      // Use data argument instead of the input value
       profileName.textContent = editModalNameInput.value;
       profileDescription.textContent = editModalDescriptionInput.value;
       closeModal(editModal);
     })
     .catch(console.error)
     .finally(() => {
-      // call setButtonText instead
       submitBtn.textContent = "Save";
     });
 }
-
-// Implement - loading text for all other form submissions
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 
