@@ -139,11 +139,9 @@ function handleDeleteCard(cardElement, cardId) {
 
 function handleLike(evt, id) {
   evt.target.classList.toggle("card__like-button_active");
-  // 1. check whether card is currently liked or not
-  //   const isLiked = ???;
-  // 2. call the changeLikeStatus method, passing the appropriate arguments
-  // 3. handle the response (.then and .catch)
-  // 4. in the .then toggle active class
+  // 1. call the changeLikeStatus method, passing the appropriate arguments
+  // 2. handle the response (.then and .catch)
+  // 3. in the .then toggle active class
 }
 
 const cardTemplate = document.querySelector("#card-template");
