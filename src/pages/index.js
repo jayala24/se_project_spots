@@ -20,10 +20,10 @@ const api = new Api({
 });
 
 api
-  .getAppInfo()
+  .getInitialCards()
   .then((data) => {
-    data[0].forEach((item) => {
-      const cardElement = getCardElement(item);
+    data.forEach((cardata) => {
+      const cardElement = getCardElement(res);
       cardsList.append(cardElement);
     });
   })

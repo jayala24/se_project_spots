@@ -1,12 +1,10 @@
 class Api {
-  constructor({ baseUrl, headers, name, about }) {
+  constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
     this._headers = headers;
-    this._name = name;
-    this._about = about;
   }
 
-  getAppInfo() {
+  getUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "GET",
       headers: this._headers,
