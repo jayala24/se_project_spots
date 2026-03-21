@@ -22,8 +22,8 @@ const api = new Api({
 api
   .getInitialCards()
   .then((data) => {
-    data.forEach((cardata) => {
-      const cardElement = getCardElement(res);
+    data.forEach((cardData) => {
+      const cardElement = getCardElement(cardData);
       cardsList.append(cardElement);
     });
   })
@@ -61,6 +61,7 @@ const profileEditButton = document.querySelector(".profile__edit-btn");
 const avatarModalBtn = document.querySelector(".profile__avatar-btn");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
+const profileAvatar = document.querySelector(".profile__avatar");
 
 const editModal = document.querySelector("#edit-modal");
 const editFormElement = editModal.querySelector(".modal__form");
