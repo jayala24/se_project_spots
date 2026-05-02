@@ -69,7 +69,7 @@ const editSubmitButton = editModal.querySelector(".modal__submit-btn");
 const editModalCloseBtn = editModal.querySelector(".modal__close-btn");
 const editModalNameInput = editModal.querySelector("#profile-name-input");
 const editModalDescriptionInput = editModal.querySelector(
-  "#profile-description-input"
+  "#profile-description-input",
 );
 
 const avatarModal = document.querySelector("#avatar-modal");
@@ -158,7 +158,28 @@ function getCardElement(data) {
   const likeButton = cardElement.querySelector(".card__like-button");
   const deleteButton = cardElement.querySelector(".card__delete-button");
 
-  // TODO - if card is liked, set the active class on the card
+  this._likes = data.likes;
+  this._isLiked = this._likes.some((user) => user._id === this._userId);
+
+  this._likeButton.addEventListener("click", () => {
+    if (!this._isLiked) {
+      this._handleLikeAdd(this._id)
+        .then((res) => {
+          this._likes = res.likes;
+          this._isLiked = true;
+          this._updateLikesView();
+        })
+        .catch(console.error);
+    } else {
+      this._handleLikeRemove(this._id)
+        .then((res) => {
+          this._likes = res.likes;
+          this._isLiked = false;
+          this._updateLikesView();
+        })
+        .catch(console.error);
+    }
+  });
 
   cardNameEl.textContent = data.name;
   cardImageEl.src = data.link;
